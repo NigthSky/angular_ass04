@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="groupSelect">
+        <h5>Select Group</h5>
+        <form action="">
+            <ul>
+                <li>
+                    <input 
+                        type="radio" 
+                        name="group" 
+                        id="1" 
+                        value="1" 
+                        checked
+                        (change)="onSelect($event)"
+                    >
+                    <label for="1">Group 1</label>
+                </li>
+                <li>
+                    <input 
+                        type="radio" 
+                        name="group" 
+                        id="1" 
+                        value="2" 
+                        (change)="onSelect($event)"
+                    >
+                    <label for="1">Group 2</label>
+                </li>
+                <li>
+                    <input 
+                        type="radio" 
+                        name="group" 
+                        id="1" 
+                        value="3"
+                        (change)="onSelect($event)"
+                    >
+                    <label for="1">Group 3</label>
+                </li>
+                <li>
+                    <input 
+                        type="radio" 
+                        name="group" 
+                        id="1" 
+                        value="4"
+                        (change)="onSelect($event)"
+                    >
+                    <label for="1">Group 4</label>
+                </li>
+                <li>
+                    <input 
+                        type="radio" 
+                        name="group" 
+                        id="1" 
+                        value="5" 
+                        (change)="onSelect($event)"
+                    >
+                    <label for="1">Group 5</label>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div class="description">
+        <h5>Group Description</h5>
+        <p>{{des}}</p>
+    </div>
+    <div class="members">
+        <div class="title">
+            <h5>Show Group Members</h5>
+        </div>  
+        <div class="toggleswitch">
+            <input 
+                type="checkbox" 
+                class="checkbox" 
+                id="checkbox" 
+                value="{{switchValue}}"
+                (change)="onChange($event)"
+            />
+            <label class="switch" for="checkbox">
+              <span class="slider"></span>
+            </label>
+        </div>
+        <div *ngIf="showHide" class="groupMembers">
+            <div *ngFor="let char of groupvalue">
+                <p>{{char.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>
